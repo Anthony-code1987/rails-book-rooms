@@ -1,0 +1,74 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://plus.unsplash.com/premium_photo-1661776594516-6895a89de126?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+  <div class="container">
+    <h1><%= @room.hotel.name %></h1>
+  </div>
+</div>
+
+<div class= "display-page-room">
+  <div class="display-one-room-booking">
+    <div class="card-one-room">
+          <!-- Gallery -->
+    <div class="row">
+      <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+        <img
+          src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          class="height-small-image w-100 shadow-1-strong rounded mb-4"
+          alt="Hotel bed"
+        />
+
+        <img
+          src="https://images.unsplash.com/photo-1596194789619-e0ff3e3f310a?q=80&w=1948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          class="height-big-image w-100 shadow-1-strong rounded mb-4"
+          alt="Hotel bathroom"
+        />
+      </div>
+
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <img
+          src="https://images.unsplash.com/photo-1518733057094-95b53143d2a7?q=80&w=1930&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          class="height-big-image w-100 shadow-1-strong rounded mb-4"
+          alt="Hotel stairs"
+        />
+
+        <img
+          src="https://plus.unsplash.com/premium_photo-1661255459061-9abfb899ff28?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          class="height-small-image w-100 shadow-1-strong rounded mb-4"
+          alt="Hotel working"
+        />
+      </div>
+
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <img
+          src="https://images.unsplash.com/photo-1603487986923-79447fed3e88?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          class="height-small-image w-100 shadow-1-strong rounded mb-4"
+          alt="Hotel golf"
+        />
+
+        <img
+          src="https://images.unsplash.com/photo-1601922245011-b614dad27246?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          class="height-big-image w-100 shadow-1-strong rounded mb-4"
+          alt="Aix city"
+        />
+      </div>
+    </div>
+    <!-- Gallery -->
+      <div class="card-body">
+        <p class="card-text"><strong><%= @room.hotel.name %></strong></p>
+        <p class="card-text">Address : <%= @room.hotel.address %></p>
+        <p class="card-text">Price per night : <%= @room.price_per_night %> euros</p>
+        <p class="card-text">Room capacity : <%= @room.capacity %> persons</p>
+      </div>
+    </div>
+
+    <div class="container-booking">
+      <h2>Create a booking</h2>
+      <%= simple_form_for [@hotel, @room, @booking], data: {controller: "datepicker", datepicker_dates_value: @disabled_dates } do |f| %>
+        <%= f.input :starts_at, as: :string, input_html: {data: {datepicker_target: "begin_at", action: "change->datepicker#send"}} %>
+        <%= f.input :ends_at, as: :string, input_html: {data: {datepicker_target: "end_at"}} %>
+        <%= f.button :submit, 'Book your room', class: "btn btn-primary"%>
+      <% end %>
+    </div>
+  </div>
+
+  <%= link_to "Back to all rooms", hotel_rooms_path(@hotel), class: "btn btn-primary" %>
+</div>

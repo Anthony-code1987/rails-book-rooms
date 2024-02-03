@@ -1,2 +1,23 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1477120128765-a0528148fed2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+  <div class="container">
+    <h1><strong>BookRooms</strong></h1>
+    <p>Save money on your next hotel trip.</p>
+  </div>
+</div>
+
+
+
+<div class="display-hotel">
+  <div class="card-hotel">
+    <% @hotels.each do |hotel| %>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="hotel-img">
+        <div class="card-body">
+          <h5 class="card-title"><%= hotel.name %></h5>
+          <p class="card-text"><%= hotel.address %></p>
+          <%= link_to "See the rooms", hotel_rooms_path(hotel), class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

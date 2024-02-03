@@ -1,0 +1,21 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://plus.unsplash.com/premium_photo-1661776594516-6895a89de126?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+  <div class="container">
+    <h1>My Bookings</h1>
+  </div>
+</div>
+
+<div class="display-bookings">
+  <div class="card-bookings">
+    <% @bookings.each do |booking| %>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="hotel-img">
+        <div class="card-body-booking">
+            <h5><strong><%= booking.room.hotel.name %></strong></h5>
+            <p><%= booking.room.hotel.address %></p>
+            <p><%= booking.starts_at.strftime("from the" + " " + "%d" + "/" + "%m") %></p>
+            <p><%= booking.ends_at.strftime("to the" + " " + "%d" + "/" + "%m") %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

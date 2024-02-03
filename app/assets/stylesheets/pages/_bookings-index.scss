@@ -1,0 +1,20 @@
+.display-bookings {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+  margin-top: 60px;
+  width: 100vw;
+}
+
+.card-bookings {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card-body-booking {
+margin-left: 20px;
+margin-top: 20px;
+}

@@ -1,1 +1,51 @@
 // Specific CSS for your home-page
+// Specific CSS for your home-page
+.display-hotel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+  margin-top: 60px;
+}
+
+.card-hotel {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card {
+  width: 20rem;
+}
+
+.btn-primary {
+  background-color: #119DA4 !important;
+  border-color: #119DA4 !important;
+}
+
+.btn-primary:hover {
+    background-color: #0b7177;
+    border-color: #0b7177;
+}
+
+.btn-primary:active {
+    background-color: #0b7177 !important;
+    border-color: #0b7177 !important;
+}
+
+.btn-primary:focus-visible {
+    background-color: #0b7177 !important;
+    border-color: #0b7177 !important;
+}
+
+.banner  p {
+  color: white;
+  opacity: 1;
+  text-shadow: none;
+  font-size: 25px;
+}
+
+.banner h1 {
+  font-size: 40px;
+}
